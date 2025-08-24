@@ -17,7 +17,7 @@ public class Application {
 		SpringApplicationBuilder builder = new SpringApplicationBuilder(Application.class);
 		
 		builder.bannerMode(Banner.Mode.OFF);
-		builder.profiles("producao");
+		builder.profiles("producao", "dev");
 
 		builder.run(args); // Args são importantes para nossa aplicação	
 
@@ -28,9 +28,6 @@ public class Application {
 		ConfigurableEnvironment environment = applicationContext.getEnvironment();
 		String applicationName = environment.getProperty("spring.application.name");
 		System.out.println(applicationName);
-		
-		// builder.properties("spring.datasource.url=jdbc://");
-
 	}
 
 }
